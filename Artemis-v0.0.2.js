@@ -66180,6 +66180,11 @@ function ListingPanel({ state }) {
     const center = () => {
       let pid = (0, import_serde3.locationIdFromDecStr)(t2.planetId.toString());
       log(pid, "info");
+      let p = df.getPlanetWithId(pid);
+      if (p === void 0) {
+        alert("This Planet Is Not In Your Map");
+        return;
+      }
       ui.centerLocationId(pid);
     };
     let showBlacklist = [];
